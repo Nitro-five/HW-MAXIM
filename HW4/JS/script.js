@@ -1,5 +1,5 @@
 alert('Hi!');
-let workingFlag;
+let working;
 let history=[];
 
 do{
@@ -8,8 +8,8 @@ do{
       history.push(result);
       alert(`Result is ${result.operationResult}`);
    }
-   workingFlag=confirm('Do u want to do some other operation?');
-} while(workingFlag);
+   working=confirm('Do u want to do some other operation?');
+} while(working);
 
 function doCalculation(){
    const operation = requestOperation();
@@ -57,6 +57,8 @@ switch(operation){
    operationResult = Math.sin(firstOperand); 
    break;
    }
+   result.operationResult = operationResult;
+   return result;
 }
 
 function formatHistory(list){
