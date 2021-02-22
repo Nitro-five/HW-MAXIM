@@ -15,6 +15,7 @@ function onButtonClick () {
    const textLi= inputEl.value;
    LiEl.innerText = textLi;
    ulEl.appendChild(LiEl);
+   inputEl.value = '';
 }
 // let val = document.getElementsByTagName('button').value;
 //document.getElementsByTagName('input').value;
