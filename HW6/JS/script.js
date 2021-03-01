@@ -1,69 +1,81 @@
-let arrLength;
-let usersArray = [];
+"use strict"; 
 
-do {
-  arrLength = requestNumber("Specify the length of the array (at least 3): ");
-} while (arrLength <= 3);
+getResult(getArray());
 
-for (let i = 0; i < arrLength; i++) {
-  usersArray.push(requestNumber("Write ur number: "));
+function getArray() {
+  let array = prompt("Write ur numbers separated by commas");
+  return array.split(",");
 }
 
-usersArray = sortArray(usersArray);
-showArray(usersArray);
-maxNumber(usersArray);
-minNumber(usersArray);
-getString(usersArray);
- 
-function showArray(arr) {
-  const len = arr.length;
-  for (let i = 0; i < len; i++) {
-    if (arr[i] != 0 && arr[i] % 3 == 0) {
-         alert(`${i + 1}. ${arr[i]}`);
-         console.log(`${i + 1}. ${arr[i]}`);
-  }
-  }
+function getResult(arr) {
+  let array = arr;
+  doOperations(array);
+  nextOperation(array);
 }
 
-function sortArray(arr) {
-  const len = arr.length;
-  for (let i = 0; i < len; i++) {
-    for (let j = 0; j < len - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        const swap = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = swap;
-      }
-    }
-  }
-  return arr;
-}
-
-function getString(arr) {
-  let divider = prompt('Write ur divider');
-  return 'String: ' + arr.join(divider);
-}
-
-function maxNumber(arr){
-   let max;
-   for (let i = 0; i < arr.length - 1; i++) {
-      max = Math.max(arr[i], arr[i + 1]);
-    }
-    alert (`Ur max number ${max}`);
-}
-
-function minNumber(arr){
-   let min;
-   for (let i = 0; i < arr.length - 1; i++) {
-      max = Math.min(arr[i], arr[i + 1]);
-    }
-    alert (`Ur max min ${min}`);
-}
-
-function requestNumber(message) {
+function doOperations(arr) {
   let result;
+  let operation;
   do {
-    result = +prompt(message);
-  } while (result != result);
-  return result;
+    operation = prompt(
+      "Choose the operation:\n sorting, multiples of three, string, max, min"
+    );
+    switch (operation) {
+      case "sorting":
+        result = sorting(arr);
+        break;
+      case "multiples of three":
+        result = getMultiplesOfThree(arr);
+        break;
+      case "string":
+        result = getString(arr);
+        break;
+      case "max":
+        result = getMax(arr);
+        break;
+      case "min":
+        result = getMin(arr);
+        break;
+      default:
+        alert("Choose the correct operation!");
+        operation = 0;
+    }
+  } while (!operation);
+  alert(result);
+}
+
+function nextOperation(previous) {
+  if (confirm("U want to continue?")) {
+    if (confirm("Start with new array?")) {
+      getResult(getArray());
+    } else {
+      getResult(previous);
+    }
+  }
+}
+
+function sorting(arr) {
+  let arrangement = arr.concat().sorting((a, b) => a - b);
+  return "Sorted array:\n " + arrangement;
+}
+function getMultiplesOfThree(arr) {
+  return "Multiplies of three:\n " + arr.filter((e) => e % 3 == 0);
+}
+function getString(arr) {
+  let divider = prompt("Enter the divider");
+  return "String:\n " + arr.join(divider);
+}
+function getMax(arr) {
+  let max;
+  for (let i = 0; i < arr.length - 1; i++) {
+    max = Math.max(arr[i], arr[i + 1]);
+  }
+  return "Max:\n " + max;
+}
+function getMin(arr) {
+  let min;
+  for (let i = 0; i < arr.length - 1; i++) {
+    min = Math.min(arr[i], arr[i + 1]);
+  }
+  return "Min:\n " + min;
 }
