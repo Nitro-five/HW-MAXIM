@@ -69,5 +69,6 @@ function div(a, b) {
 
 function sin(a, b) {
   return Math.sin(a);
+
 }
 
