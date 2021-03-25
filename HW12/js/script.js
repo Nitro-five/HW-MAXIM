@@ -31,7 +31,7 @@ const students = [
 function getAvgMark() {
   let a = 0;
   this.marks.forEach((e) => {
-    a += e / 2;
+    a += e / 5;
   });
   return a;
 }
