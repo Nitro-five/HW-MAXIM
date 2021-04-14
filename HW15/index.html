@@ -4,50 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
-    <link
-      href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      rel="stylesheet"
-      id="bootstrap-css"
-    />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Form</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="/HW15/js/server.js"></script>
-    <script src="js/component.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/LoginComponent.js" defer></script>
+    <script src="js/MainComponent.js" defer></script>
+    <script src="js/script.js" defer></script>
   </head>
-  <body class="text-center">
-    <div class="wrapper fadeInDown">
-      <div id="formContent">
-        <div class="fadeIn first">
-          <img
-            src="https://htmlacademy.ru/assets/courses/305/files/preview-1.jpg"
-            id="icon"
-            alt="User Icon"
-          />
-        </div>
-        <form>
-          <input
-            type="text"
-            id="login"
-            class="fadeIn second"
-            name="login"
-            placeholder="login"
-          />
-          <input
-            type="text"
-            id="password"
-            class="fadeIn third"
-            name="login"
-            placeholder="password"
-          />
-          <input type="submit" class="fadeIn fourth" value="Log In" />
-        </form>
-        <div id="formFooter">
-          <a class="underlineHover" href="#">Forgot Password?</a>
-        </div>
+  <body>
+    <header class="content">
+      <h1>Hello world</h1>
+    </header>
+    <main id="content" class="content-items"></main>
+    <script id="login-template" type="text/template">
+      <div class="container">
+          <div id="message" class="hide alert">
+              {{message}}
+          </div>
+          <form id="login-form">
+              <input type="Email" id="email-input" class="input" placeholder="email">
+              <input type="Password" id="pass-input" class="input" placeholder="password">
+              <button type="submit" class="button">SEND</button>
+          </form>
       </div>
-    </div>
+    </script>
+    <script id="main-template" type="text/template">
+      <div id="main_container">
+          <div class="accept">Nice</div>
+      </div>
+    </script>
   </body>
 </html>
