@@ -1,0 +1,14 @@
+body{
+   background-color: #091729;
+}
+
+.custom-btn{
+ background: linear-gradient(to bottom, #30918B, #2B5882);
+ color: #fff;
+}
+
+.list-group-item{
+   background-color: #182E49;;
+   color: #fff;
+   font-weight: bold;
+}
