@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.box {
+  overflow: hidden;
+  background-color: #f45b69;
+  padding: 40px 30px 30px 30px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%, 50%);
+  transition: transform 300ms, 
+  box-shadow 300ms;
+  box-shadow: 5px 10px 10px
+  rgba(2, 128, 144, 0.2);
+}
+
+.box::before, .box::after{
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 45%;
+  border-bottom-left-radius: 35%;
+  border-bottom-right-radius: 40%;
+  z-index: -1;
+}
+
+.box::before{
+  left: 30%;
+  bottom: -115%;
+  background-color: rgba(51, 122, 199, 0.15);
+  animation: wawes 6s infinite linear;
+}
+
+.box::after{
+  left: 26%;
+  bottom: -111%;
+  background-color: rgba(24, 215, 240, 0.2);
+  animation: wawes 7s infinite;
+}
+
+.box > input{
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  margin: 15px -10px;
+  outline: none !important;
+}
+
+.box > button{
+  float: right;
+  cursor: pointer;
+  color: rgb(173, 118, 118);
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 80px;
+  border: 0;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-left: -5px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  transition: background-color 300ms;
+}
+
+
+@keyframes wawes{
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+  a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 12px;
+  }
+}
+.box h1 {
+  text-align: center;
+  color: rgb(70, 14, 14);
+  text-transform: uppercase;
+}
+
+.inputEm,
+.inpt-password {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 16px auto;
+  text-align: center;
+  border: 2px solid yellow;
+  padding: 14px 10px;
+  width: 244px;
+  outline: none;
+  color: black;
+  border-radius: 4px;
+}
+
+.inpt-button {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid blue;
+  
+}
+.inpt-button:hover {
+  background: lightskyblue;
+}
+
+.active {
+  display: block;
+  text-align: center;
+  border: 2px solid rgb(122, 25, 8);
+  background: rgb(70, 14, 14);
+  color: linen;
+  border-radius: 4px;
+}
+
+.alert {
+  display: none;
+}
+
+.d-none {
+  display: none;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <script src="js/login.js" defer></script>
+    <script src="js/list.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <title>HW</title>
+  </head>
+  <body>
+    <div class="container">
+      <main id="content"></main>
+    </div>
+    <script id="login-template" type="text/template">
+      <form method="POST"  id = "login-form"class="box" >
+      	<h1>SING UP</h1>
+      	<div class="active alert" role="alert" id = "alert-message">
+      		Incorrect credentialis, please try again!
+      	</div>
+      	<input type="email" name="" placeholder="login" class="inputEm" id="inputEm">
+      	<input type="password" name="" placeholder="password" class="inpt-password" id="inpt-password">
+      	<button class="inpt-button" type="submit">Login</button>
+      </form>
+    </script>
+    <script id="user-list-template" type="text/template">
+      <div class="list-container ">
+      	<ul id="user-list">
+
+      	</ul>
+      </div>
+    </script>
+  </body>
+</html>
