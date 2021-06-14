@@ -1,0 +1,48 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container_title {
+  display: flex;
+}
+.container_input {
+  margin: 20px 0;
+}
+.input {
+  width: 70vh;
+  height: 3vh;
+  border: 2px solid lightskyblue;
+  color: white;
+  background-color: blue;
+  border-radius: 2px;
+}
+.btn-style {
+  height: 25px;
+  width: 75px;
+  margin-left: 10px;
+  background-color: lightskyblue;
+}
+
+.list_item {
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  border: 2px solid lightskyblue;
+  background-color: blue;
+  padding: 2px;
+  width: 100vh;
+  list-style-type: decimal;
+}
+
+.completed {
+  border-color: lightskyblue;
+  background-color: blue;
+}
